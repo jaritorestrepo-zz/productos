@@ -1,0 +1,29 @@
+<div class="container">
+  <form nz-form (ngSubmit)="guardar()" [formGroup]="productoForm">
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="nombre">Nombre</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Ingrese el nombre del producto">
+        <input nz-input formControlName="nombre" id="nombre" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="sku">SKU</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Ingrese el SKU del producto">
+        <input nz-input formControlName="sku" id="sku" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="descripcion">Descripción</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Ingrese la descripción del producto">
+        <textarea formControlName="descripcion" nz-input rows="4" placeholder="Escribe una descripción"></textarea>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row>
+      <nz-form-control>
+        <button nz-button type="submit" nzType="primary">Guardar</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <button nz-button nzType="default" (click)="lista()">Ir a la lista</button>
+
+</div>

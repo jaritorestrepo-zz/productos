@@ -1,0 +1,29 @@
+<div class="container">
+  <nz-table #basicTable [nzData]="pedidos">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Estado</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pedido of pedidos">
+        <td [innerText]="pedido.id"></td>
+        <td [innerText]="pedido.estado"></td>
+        <td>
+          <ng-container *ngIf="pedido.estado === estadoPendiente">
+            <nz-divider nzType="vertical"></nz-divider>
+            <button nz-button nzType="primary" (click)="completar(pedido)">Completar</button>
+            <nz-divider nzType="vertical"></nz-divider>
+            <button nz-button nzType="default" (click)="editar(pedido)">Editar</button>
+            <ng-container *ngIf="pedido.id">
+              <nz-divider nzType="vertical"></nz-divider>
+              <button nz-button nzType="default" (click)="eliminar(pedido.id)">Eliminar</button>
+            </ng-container>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

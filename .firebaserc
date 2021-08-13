@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "productos-cbb80": {
+      "hosting": {
+        "productos": [
+          "productos-cbb80"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<nav>
+  <ul nz-menu nzMode="horizontal">
+    <li nz-submenu nzTitle="Productos" nzIcon="shopping-cart">
+      <ul>
+        <li nz-menu-item><a [routerLink]="['/productos']">Lista de productos</a></li>
+        <li nz-menu-item><a [routerLink]="['/productos/crear']">Crear producto</a></li>
+      </ul>
+    </li>
+    <li nz-submenu nzTitle="Pedidos" nzIcon="shopping-cart">
+      <ul>
+        <li nz-menu-item><a [routerLink]="['/pedidos']">Lista de pedidos</a></li>
+        <li nz-menu-item><a [routerLink]="['/pedidos/crear']">Crear pedido</a></li>
+      </ul>
+    </li>
+    <li nz-submenu nzTitle="Usuarios" nzIcon="user">
+      <ul>
+        <li nz-menu-item><a [routerLink]="['/usuario']">Perfil</a></li>
+        <li nz-menu-item>Cerrar sesión</li>
+      </ul>
+    </li>
+  </ul>
+</nav>

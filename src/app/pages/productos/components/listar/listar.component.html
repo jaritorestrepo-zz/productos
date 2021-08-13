@@ -1,0 +1,34 @@
+<div class="container">
+  <nz-table #basicTable [nzData]="productos">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>SKU</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td [innerText]="producto.id"></td>
+        <td [innerText]="producto.nombre"></td>
+        <td [innerText]="producto.sku"></td>
+        <td [innerText]="producto.descripcion"></td>
+        <td>
+          <ng-container *ngIf="pedido">
+            <button nz-button nzType="primary" (click)="pedir(producto)">Pedir</button>
+          </ng-container>
+
+          <ng-container *ngIf="!pedido">
+            <button nz-button nzType="default" (click)="editar(producto)">Editar</button>
+            <ng-container *ngIf="producto.id">
+              <nz-divider nzType="vertical"></nz-divider>
+              <button nz-button nzType="default" (click)="eliminar(producto.id)">Eliminar</button>
+            </ng-container>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

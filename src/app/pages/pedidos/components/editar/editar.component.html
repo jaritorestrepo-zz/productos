@@ -1,0 +1,39 @@
+<div class="container">
+  <ng-container *ngIf="pedido">
+    <div class="row">
+      <h3>Pedido: </h3>
+      <h2 [innerText]="pedido.id"></h2>
+      <nz-divider nzType="vertical"></nz-divider>
+      <h3>Estado del pedido: </h3>
+      <h2 [innerText]="pedido.estado"></h2>
+    </div>
+
+    <nz-divider></nz-divider>
+  </ng-container>
+
+  <div class="row">
+    <h3>Lista de productos</h3>
+    <nz-divider nzType="vertical"></nz-divider><button nz-button nzType="default" (click)="agregar()">Agregar
+      producto</button>
+  </div>
+  <ng-container *ngIf="pedido && pedido.productos && pedido.productos.length > 0">
+    <nz-table #basicTable [nzData]="pedido.productos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>SKU</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of pedido.productos">
+          <td [innerText]="producto.id"></td>
+          <td [innerText]="producto.nombre"></td>
+          <td [innerText]="producto.sku"></td>
+          <td [innerText]="producto.descripcion"></td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </ng-container>
+</div>
